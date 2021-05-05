@@ -429,7 +429,7 @@ do_install() {
 			;;
 		centos|fedora|rhel)
 			yum_repo="$DOWNLOAD_URL/linux/$lsb_dist/$REPO_FILE"
-			if [ "$lsb_dist" = "rhel" ]
+			if [ "$lsb_dist" = "rhel" ]; then
 				yum_repo="$DOWNLOAD_URL/linux/centos/$REPO_FILE"
 			fi
 			if ! curl -Ifs "$yum_repo" > /dev/null; then
