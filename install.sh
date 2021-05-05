@@ -456,7 +456,6 @@ do_install() {
 					set -x
 				fi
 				$sh_c "$pkg_manager install -y -q $pre_reqs"
-				echo "$sh_c $config_manager --add-repo $yum_repo"
 				$sh_c "$config_manager --add-repo $yum_repo"
 
 				if [ "$CHANNEL" != "stable" ]; then
