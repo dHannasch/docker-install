@@ -429,6 +429,9 @@ do_install() {
 			;;
 		centos|fedora|rhel)
 			yum_repo="$DOWNLOAD_URL/linux/$lsb_dist/$REPO_FILE"
+			if [ "$lsb_dist" = "rhel" ]
+				yum_repo="$DOWNLOAD_URL/linux/centos/$REPO_FILE"
+			fi
 			if ! curl -Ifs "$yum_repo" > /dev/null; then
 				echo "Error: Unable to curl repository file $yum_repo, is it valid?"
 				exit 1
